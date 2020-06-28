@@ -48,3 +48,6 @@ function setPosition() {
 setTimeout(() => {
     setInterval(runTheClock, 100);
 }, 500);
+
+//REMEMBER: Brower throttles the clock if you're not focusing, then the clock will give incorrect results
+// It happens because the clock is handled over to the browser not the date object.
