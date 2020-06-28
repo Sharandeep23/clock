@@ -6,7 +6,7 @@ const SECONDHAND = document.querySelector("#second");
 // Creating date object
 const date = new Date();
 
-// Getting hours, minutes and seconds
+// Getting hours(0–23), minutes(0–59) and seconds(0–59)
 let hr = date.getHours();
 let min = date.getMinutes();
 let sec = date.getSeconds();
@@ -26,15 +26,12 @@ let secPosition = sec * (360 / 60);
 // Initial Clock
 setPosition();
 
-// Running the clock every other second
-setInterval(runTheClock, 1000);
-
 function runTheClock() {
-    // Moving positins for each seconds
+    // Moving positins for 100 milliseconds
 
-    hrPosition += 30 / 60 / 60;
-    minPosition += 6 / 60;
-    secPosition += 6;
+    hrPosition += (30 / 60 / 60) * 0.1;
+    minPosition += (6 / 60) * 0.1;
+    secPosition += 6 * 0.1;
 
     // Setting the position of the arms after updated info
     setPosition();
@@ -45,3 +42,9 @@ function setPosition() {
     MINUTEHAND.style.transform = `rotate(${minPosition}deg)`;
     SECONDHAND.style.transform = `rotate(${secPosition}deg)`;
 }
+
+// Running the clock every 100 milliseconds
+// Becuase the trainsition takes 500 milliseconds we've to run the clock after that so that they don't get mix up.
+setTimeout(() => {
+    setInterval(runTheClock, 100);
+}, 500);
