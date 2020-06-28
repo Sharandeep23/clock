@@ -23,9 +23,6 @@ let minPosition = min * (360 / 60) + sec * (360 / 60 / 60);
 // For every second, the second-arm moves 6 degree
 let secPosition = sec * (360 / 60);
 
-// Initial Clock
-setPosition();
-
 function runTheClock() {
     // Moving positins for 100 milliseconds
 
@@ -44,10 +41,7 @@ function setPosition() {
 }
 
 // Running the clock every 100 milliseconds
-//As the trainsition takes 100 milliseconds we've to run the clock after that so that they don't get mix up.
-setTimeout(() => {
-    setInterval(runTheClock, 100);
-}, 100);
+setInterval(runTheClock, 100);
 
 //REMEMBER: Brower throttles the clock if you're not focusing, then the clock will give incorrect results
 // It happens because the clock is handled over to the browser not the date object.
