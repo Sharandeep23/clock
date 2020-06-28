@@ -13,7 +13,7 @@ let sec = date.getSeconds();
 
 // Here seconds is negligible
 // For every hour, the hour-arm moves 30 degree
-// We have to change the hour-arm in accordance with the minutes
+// We also have to change the hour-arm in accordance with the minutes
 let hrPosition = hr * (360 / 12) + min * (360 / 12 / 60);
 
 // For every minute, the minute-arm moves 6 degree like seconds
