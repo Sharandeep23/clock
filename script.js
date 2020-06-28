@@ -44,7 +44,7 @@ function setPosition() {
 }
 
 // Running the clock every 100 milliseconds
-// Becuase the trainsition takes 500 milliseconds we've to run the clock after that so that they don't get mix up.
+//As the trainsition takes 500 milliseconds we've to run the clock after that so that they don't get mix up.
 setTimeout(() => {
     setInterval(runTheClock, 100);
 }, 500);
