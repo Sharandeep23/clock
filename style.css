@@ -16,9 +16,9 @@ body {
 .main {
     display: flex;
     padding: 2em;
-    height: 90vh;
+    height: 87vh;
     justify-content: center;
-    align-items: middle;
+    align-items: center;
 }
 
 .clockbox,
@@ -71,10 +71,8 @@ body {
 }
 
 /* Make all arms rotate around the same center point. */
-/* Optional: Use transition for animation. */
 #hour,
 #minute,
 #second {
     transform-origin: 300px 300px;
-    transition: transform 0.1s ease-in-out;
 }
