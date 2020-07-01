@@ -13,16 +13,16 @@ function runTheClock() {
     let sec = date.getSeconds();
 
     // Here seconds is negligible
-    // For every hour, the hour-arm moves 30 degree
+    // For every hour, the hour-arm moves 30 (360 / 12) degree
     // We also have to change the hour-arm in accordance with the minutes
-    let hrPosition = hr * (360 / 12) + min * (360 / 12 / 60);
+    let hrPosition = hr * 30 + min * 0.5;
 
-    // For every minute, the minute-arm moves 6 degree like seconds
+    // For every minute, the minute-arm moves 6 (360 / 60) degree like seconds
     // Here we also change the minute-arm in accordance with the seconds to make it more precise
-    let minPosition = min * (360 / 60) + sec * (360 / 60 / 60);
+    let minPosition = min * 6 + sec * 0.1;
 
-    // For every second, the second-arm moves 6 degree
-    let secPosition = sec * (360 / 60);
+    // For every second, the second-arm moves 6 (360 / 60) degree
+    let secPosition = sec * 6;
 
     // Setting the position of the arms after updated info
     HOURHAND.style.transform = `rotate(${hrPosition}deg)`;
@@ -30,5 +30,5 @@ function runTheClock() {
     SECONDHAND.style.transform = `rotate(${secPosition}deg)`;
 }
 
-// Running the clock every 1000 milliseconds
+// Running the clock after every 1 seconds
 setInterval(runTheClock, 1000);
