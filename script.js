@@ -38,4 +38,5 @@ setInterval(runTheClock, 1000);
 
 // When calculating degree
 // 60 sec || 60 min || 12 hr
+// For each second, minute and hour
 // 360/60 || 360/60 || 360/12
